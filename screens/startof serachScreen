@@ -1,0 +1,49 @@
+import React from "react";
+import {
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+  TextInput,
+} from "react-native";
+
+export default class Searchscreen extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      searchText: "",
+    };
+  }
+  render() {
+    return (
+      <View style={{ flex: 1, marginTop: 20, flexDirection: "row" }}>
+        <TextInput
+          style={{
+            backgroundColor: "peach",
+            borderWidth: 2,
+            borderColor: "black",
+            width: 200,
+            height: 30,
+          }}
+          placeholder="enter BookID or studentID"
+          onChangeText={(text) => {
+            this.setState({
+              searchText: text,
+            });
+          }}
+        />
+        <TouchableOpacity
+          style={{
+            backgroundColor: "cyan",
+            borderWidth: 2,
+            borderColor: "black",
+            width: 50,
+            height: 30,
+          }}
+        >
+          <Text>Search</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+}
